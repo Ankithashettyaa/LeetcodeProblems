@@ -3,11 +3,8 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-   nums= nums.sort()
-   for (let i=1;i<nums.length;i++){
-      if(nums[i]==nums[i-1])
-       return true;
-      
-   }
+  const set = new Set(nums)
+  if(set.size < nums.length)
+    return true;
    return false;
 }
