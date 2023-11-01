@@ -1,4 +1,4 @@
-​Pattern:
+
 Brute force:
   checking every ele in array with all will be n*n
 using hashmap:
