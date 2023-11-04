@@ -14,7 +14,7 @@
  */
 var lowestCommonAncestor = function(root, p, q) {
    let cur = root
-   while(cur){
+ 
        console.log(cur.val,p.val,q.val)
        if(cur.val === p.val || cur.val === q.val)
            return cur
@@ -24,6 +24,6 @@ var lowestCommonAncestor = function(root, p, q) {
             return lowestCommonAncestor(cur.left,p,q)
        else 
            return cur
-   }
+   
     //return root
 };
