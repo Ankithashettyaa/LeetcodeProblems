@@ -25,5 +25,5 @@ var lowestCommonAncestor = function(root, p, q) {
        else 
            return cur
    }
-    return root
+    //return root
 };
