@@ -12,9 +12,8 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function(root, p, q) {
-   let cur = root
- 
+var lowestCommonAncestor = function(cur, p, q) {
+   
        if(cur.val === p.val || cur.val === q.val)
            return cur
        else if(cur.val < p.val && cur.val < q.val)
