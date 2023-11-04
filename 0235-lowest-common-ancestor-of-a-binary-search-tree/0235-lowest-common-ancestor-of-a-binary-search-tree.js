@@ -12,16 +12,23 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function(cur, p, q) {
-   
-       if(cur.val === p.val || cur.val === q.val)
-           return cur
-       else if(cur.val < p.val && cur.val < q.val)
-           return lowestCommonAncestor(cur.right,p,q)
-       else if(cur.val > p.val && cur.val > q.val)
-            return lowestCommonAncestor(cur.left,p,q)
-       else 
-           return cur
-   
-    //return root
+var lowestCommonAncestor = function(root, p, q) {
+    if (!root) {
+        return null;
+    }
+
+    if (root.val == p.val || root.val == q.val) {
+        return root;
+    }
+
+    var left = lowestCommonAncestor(root.left, p, q);
+    var right = lowestCommonAncestor(root.right, p, q);
+
+    if (left && right) {
+        return root; // LCA found in both left and right subtrees
+    } else if (left) {
+        return left; // LCA found in the left subtree
+    } else {
+        return right; // LCA found in the right subtree
+    }
 };
